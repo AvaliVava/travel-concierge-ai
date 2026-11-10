@@ -14,7 +14,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# Root Python packaging output; retain apps/web/src/lib/ from the blueprint.
+/lib/
 lib64/
 parts/
 sdist/
@@ -218,3 +219,65 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Node.js dependencies and generated frontend output
+node_modules/
+.next/
+out/
+.turbo/
+.parcel-cache/
+.pnpm-store/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment variants; examples must contain placeholders only
+.env.*
+!.env.example
+
+# Local credentials and private key material
+.aws/
+.secrets/
+/secrets/
+credentials
+credentials.json
+credentials.*.json
+service-account*.json
+*-service-account.json
+*.credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+/infrastructure/secrets/*
+!/infrastructure/secrets/README.md
+
+# Terraform local state, plans, variable secrets, and working directories
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+# Keep future .terraform.lock.hcl and dependency lockfiles versionable.
+
+# Generated reports, temporary files, and local artifacts
+coverage/
+playwright-report/
+test-results/
+generated/
+/artifacts/
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.bak
+*~
+.DS_Store
+Thumbs.db
